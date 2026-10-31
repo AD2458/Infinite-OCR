@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Infinite OCR</title>
+<link rel="stylesheet" href="/static/style.css">
+<!-- Noto fonts: Windows default fonts render several Indic scripts as tofu,
+     which would make the reviewer unusable for the documents in scope. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari&family=Noto+Sans+Bengali&family=Noto+Sans+Tamil&family=Noto+Sans+Telugu&family=Noto+Sans+Kannada&family=Noto+Sans+Malayalam&family=Noto+Sans+Gurmukhi&family=Noto+Sans+Gujarati&family=Noto+Sans+Oriya&family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="header-bar"></div>
+  <div class="header-inner">
+    <div class="logo-row">
+      <div class="logo-icon">
+        <svg viewBox="0 0 40 40" width="40" height="40">
+          <rect x="4" y="6" width="32" height="28" rx="4" fill="#5b4bdb" opacity=".12"/>
+          <rect x="8" y="12" width="16" height="2.5" rx="1" fill="#5b4bdb"/>
+          <rect x="8" y="17" width="24" height="2.5" rx="1" fill="#5b4bdb" opacity=".6"/>
+          <rect x="8" y="22" width="20" height="2.5" rx="1" fill="#5b4bdb" opacity=".35"/>
+          <rect x="8" y="27" width="24" height="2.5" rx="1" fill="#5b4bdb" opacity=".6"/>
+        </svg>
+      </div>
+      <div>
+        <h1>Infinite&nbsp;OCR</h1>
+        <p class="tag">One continuous, structure-aware OCR output for an entire PDF</p>
+      </div>
+    </div>
+    <div class="header-right">
+      <div id="health" class="health"></div>
+      <button id="dark-toggle" class="dark-btn" title="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ============ UPLOAD ============ -->
+  <section id="upload-pane" class="card">
+    <div class="step-header"><span class="step-num">1</span><h2>Upload a PDF</h2></div>
+    <div id="drop" class="drop">
+      <input type="file" id="file" accept="application/pdf" hidden>
+      <div class="drop-icon">
+        <svg viewBox="0 0 48 48" width="48" height="48">
+          <path d="M24 4 L24 30 M16 22 L24 30 L32 22" stroke="#5b4bdb" stroke-width="2.5"
+                fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 34 v6 a4 4 0 004 4h24a4 4 0 004-4v-6" stroke="#5b4bdb" stroke-width="2.5"
+                fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="drop-title">Drop a PDF here</p>
+      <p class="drop-sub">or <button class="link" id="browse">browse your files</button></p>
+      <p class="drop-hint">Multi-script &amp; scanned Indian-language documents welcome.
+         No language setting needed.</p>
+    </div>
+
+    <div id="picked-row" class="picked-row hidden">
+      <span class="picked-icon">📄</span>
+      <span id="picked" class="picked-name"></span>
+      <button id="pick-clear" class="pick-x" title="Clear">&times;</button>
+    </div>
+
+    <div id="page-selector" class="page-sel hidden">
+      <div class="page-sel-header">
+        <span class="page-sel-icon">📑</span>
+        <span id="page-total-label" class="page-sel-label"></span>
+      </div>
+      <div class="page-sel-body">
+        <div class="page-sel-mode">
+          <label class="radio-label">
+            <input type="radio" name="pg-mode" value="all" checked> All pages
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="pg-mode" value="first"> First
+            <input type="number" id="pg-first-n" value="3" min="1" max="999" class="pg-n">
+            pages
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="pg-mode" value="custom"> Custom
+          </label>
+        </div>
+        <div id="pg-custom-area" class="pg-custom hidden">
+          <input type="text" id="pg-spec" class="pg-spec"
+                 placeholder="e.g. 1-3, 7, 10-12">
+          <span class="hint">Comma-separated ranges (1-based). Each range is a
+                continuous block for stitching.</span>
+          <div id="pg-chips" class="pg-chips"></div>
+        </div>
+        <div id="pg-credit-note" class="pg-credit-note"></div>
+      </div>
+    </div>
+
+    <details class="adv">
+      <summary>Advanced options</summary>
+      <div class="opts">
+        <label>Table format
+          <select id="table_format">
+            <option value="html">HTML (preserves merged cells)</option>
+            <option value="markdown">Markdown (smaller)</option>
+          </select>
+        </label>
+        <label>Parallel requests
+          <input type="number" id="concurrency" value="4" min="1" max="16">
+        </label>
+      </div>
+    </details>
+
+    <div class="info-callout">
+      <span class="info-icon">ℹ️</span>
+      <span>Every page is OCR'd via Bodhan's vision model. Billed per page &mdash;
+      cached pages are never billed again.</span>
+    </div>
+
+    <button id="go" class="primary go-btn" disabled>
+      <span class="go-icon">▶</span> Run OCR
+    </button>
+  </section>
+
+  <!-- ============ PROGRESS ============ -->
+  <section id="progress-pane" class="card hidden">
+    <div class="step-header"><span class="step-num">2</span><h2>Processing</h2></div>
+    <div class="bar"><div id="bar-fill"></div></div>
+    <p id="status-line" class="status"></p>
+    <p id="cost-line" class="cost"></p>
+  </section>
+
+  <!-- ============ RESULTS ============ -->
+  <section id="result-pane" class="hidden">
+    <div class="card">
+      <div class="step-header"><span class="step-num">3</span><h2>Results</h2></div>
+      <div id="summary" class="summary"></div>
+      <div class="tabs">
+        <button class="tab active" data-tab="doc">Continuous document</button>
+        <button class="tab" data-tab="side">Side by side</button>
+        <button class="tab" data-tab="stitch">Stitching decisions</button>
+        <button class="tab" data-tab="review">Review queue</button>
+        <button class="tab" data-tab="blocks">Blocks</button>
+      </div>
+      <div class="exports">
+        <span class="hint">Download:</span>
+        <a class="dl" data-fmt="html">HTML</a>
+        <a class="dl" data-fmt="docx">Word</a>
+        <a class="dl" data-fmt="xlsx">Excel</a>
+        <a class="dl" data-fmt="md">Markdown</a>
+        <a class="dl" data-fmt="mdflat">Markdown (flat tables)</a>
+        <a class="dl" data-fmt="txt">Plain text</a>
+        <span class="hint">All exports are free &mdash; no API credits.</span>
+      </div>
+    </div>
+
+    <div id="tab-doc" class="card tabpane">
+      <div class="viewtoggle">
+        <button id="v-preview" class="vt active">Preview</button>
+        <button id="v-source" class="vt">Source</button>
+        <button id="v-expand" class="vt expand-btn" title="Toggle fullscreen (F)">⛶</button>
+      </div>
+      <div id="doc-preview" class="preview"></div>
+      <pre id="doc-out" class="doc hidden"></pre>
+    </div>
+
+    <div id="tab-side" class="card tabpane hidden">
+      <div class="sbs-bar">
+        <button id="sbs-prev" title="Previous page (←)">&larr;</button>
+        <span id="sbs-label">page 1</span>
+        <button id="sbs-next" title="Next page (→)">&rarr;</button>
+        <div class="sbs-controls">
+          <button id="sbs-zout" title="Zoom out">−</button>
+          <span id="sbs-zoom">100%</span>
+          <button id="sbs-zin" title="Zoom in">+</button>
+          <label class="sbs-toggle" title="Toggle bounding boxes">
+            <input type="checkbox" id="sbs-showboxes" checked> Boxes
+          </label>
+        </div>
+        <span class="hint">Click a region or block &mdash; both panes sync.
+              Double-click to edit. Arrow keys navigate pages.</span>
+      </div>
+      <div id="sbs-thumbs" class="sbs-thumbs"></div>
+      <div class="sbs">
+        <div class="sbs-page">
+          <div id="sbs-wrap" class="sbs-wrap">
+            <img id="sbs-img" alt="page">
+            <div id="sbs-boxes"></div>
+          </div>
+        </div>
+        <div id="sbs-text" class="sbs-text"></div>
+      </div>
+    </div>
+
+    <div id="tab-stitch" class="card tabpane hidden">
+      <p class="hint">Every cross-page merge is a decision you can reject.
+         A false table merge corrupts data silently, so each one is auditable.</p>
+      <div id="links-out"></div>
+    </div>
+
+    <div id="tab-review" class="card tabpane hidden">
+      <p class="hint">Flagged regions only &mdash; so you read a fraction of the document.</p>
+      <div id="queue-out"></div>
+    </div>
+
+    <div id="tab-blocks" class="card tabpane hidden">
+      <div id="blocks-out"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ BLOCK EDITOR ============ -->
+<div id="modal" class="modal hidden">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="m-title">Block</h3>
+      <div class="modal-keys">
+        <kbd>Ctrl+S</kbd> save &nbsp; <kbd>Esc</kbd> close
+      </div>
+      <button id="m-expand" class="m-exp" title="Toggle fullscreen">⛶</button>
+      <button id="modal-close" class="x">&times;</button>
+    </div>
+    <div class="m-grid">
+      <div>
+        <div class="m-meta" id="m-meta"></div>
+        <img id="m-img" class="crop" alt="page region">
+        <p class="hint">The exact region this block came from.</p>
+        <div id="m-table" class="m-table"></div>
+      </div>
+      <div>
+        <div class="m-text-header">
+          <label class="lbl">Text</label>
+          <button id="m-text-toggle" class="m-toggle" type="button">Show raw</button>
+        </div>
+        <div id="m-text-rendered" class="m-rendered"></div>
+        <textarea id="m-text" rows="12" class="hidden"></textarea>
+        <div class="tiers">
+          <div class="tier">
+            <span class="tier-tag free">free</span>
+            <button id="m-save" class="primary">Save &amp; lock</button>
+            <button id="m-unlock">Unlock</button>
+            <button id="m-break">Break stitch</button>
+            <button id="m-merge">Force merge &rarr; next</button>
+          </div>
+          <div class="tier">
+            <span class="tier-tag cost">1 credit</span>
+            <button id="m-pad">+10% padding &amp; re-OCR</button>
+            <button id="m-hidpi">Re-render @600 DPI &amp; re-OCR</button>
+          </div>
+        </div>
+        <p class="hint"><b>Re-sending the same pixels returns the same answer</b> &mdash;
+           the model is deterministic. A useful redo must change its input: a wider
+           crop, or genuinely more detail from the PDF. Saving locks the block so no
+           later pass can overwrite it.</p>
+        <p id="m-msg" class="msg"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <span>Infinite OCR &middot; Powered by <strong>Bodhan AI</strong></span>
+    <span class="footer-sep">&middot;</span>
+    <span id="footer-stats"></span>
+    <span class="footer-sep">&middot;</span>
+    <button id="clear-images" class="footer-btn" title="Delete page PNGs and crops. Free to rebuild — OCR responses are kept, so no credits are spent.">Clear images</button>
+    <button id="clear-all" class="footer-btn danger" title="Also delete cached OCR responses. Re-running will be billed again.">Clear all cache</button>
+    <span id="clear-msg" class="clear-msg"></span>
+  </div>
+</footer>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

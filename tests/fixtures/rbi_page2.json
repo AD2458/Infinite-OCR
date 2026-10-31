@@ -1,0 +1,92 @@
+{
+  "id": "indic-ocr-5c9fb77659ba42c79cc0558337253386",
+  "created": 1793308551,
+  "model": "indic-ocr",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "<table>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td>be extended.</td>\n</tr>\n<tr>\n<td>viii.</td>\n<td>Last date of submission of EMD in the Estate Department of RBI, Bhubaneswar</td>\n<td>February 02, 2026 up to 15:00 Hrs.</td>\n</tr>\n<tr>\n<td>ix.</td>\n<td>Start Bid date - Date of Starting of e- Tender for submission of online Techno- Commercial Bid and Price Bid.</td>\n<td>January 22, 2026 from 18:00 Hrs.</td>\n</tr>\n<tr>\n<td>x.</td>\n<td>Close Bid date - Date of closing of online e – tender for submission of Techno- Commercial Bid & Price Bid.<br/>N.B: Bids which are incomplete i.e., if any document as required as per this tender is not submitted by this date and time is liable to be rejected at the sole discretion of the Bank.</td>\n<td>February 02, 2026 up to 15:00 Hrs.</td>\n</tr>\n<tr>\n<td>xi.</td>\n<td>Part I (Technical-Bid) opening date and time</td>\n<td>February 02, 2026 at 16:00 Hrs.</td>\n</tr>\n<tr>\n<td>xii.</td>\n<td>Part II (Price-Bid) opening date and time</td>\n<td>Shall be informed separately to eligible bidders.</td>\n</tr>\n<tr>\n<td>xiii.</td>\n<td>Transaction Fee<br/>Please note that the vendors will have the access to online e-tender only after payment of transaction fees online.</td>\n<td>As charged by MSTC ltd. Payment of transaction fees will be paid online through MSTC payment gateway.</td>\n</tr>\n</tbody>\n</table>\n\nRegional Director\nBhubaneswar\n\nComprehensive Annual Maintenance Service Contract (CAMSC) for Pest Control Services in Bank's Main Office Premises (MOP) and Three (03) Residential Colonies of RBI Bhubaneswar, Odisha\n\n8 | Page\nha",
+        "role": "assistant",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 427,
+    "prompt_tokens": 2747,
+    "total_tokens": 3174
+  },
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        174.8,
+        172.3,
+        2216.3,
+        1847.0
+      ],
+      "conf": 0.965,
+      "text": "<table>\n<tbody>\n<tr>\n<td></td>\n<td></td>\n<td>be extended.</td>\n</tr>\n<tr>\n<td>viii.</td>\n<td>Last date of submission of EMD in the Estate Department of RBI, Bhubaneswar</td>\n<td>February 02, 2026 up to 15:00 Hrs.</td>\n</tr>\n<tr>\n<td>ix.</td>\n<td>Start Bid date - Date of Starting of e- Tender for submission of online Techno- Commercial Bid and Price Bid.</td>\n<td>January 22, 2026 from 18:00 Hrs.</td>\n</tr>\n<tr>\n<td>x.</td>\n<td>Close Bid date - Date of closing of online e – tender for submission of Techno- Commercial Bid & Price Bid.<br/>N.B: Bids which are incomplete i.e., if any document as required as per this tender is not submitted by this date and time is liable to be rejected at the sole discretion of the Bank.</td>\n<td>February 02, 2026 up to 15:00 Hrs.</td>\n</tr>\n<tr>\n<td>xi.</td>\n<td>Part I (Technical-Bid) opening date and time</td>\n<td>February 02, 2026 at 16:00 Hrs.</td>\n</tr>\n<tr>\n<td>xii.</td>\n<td>Part II (Price-Bid) opening date and time</td>\n<td>Shall be informed separately to eligible bidders.</td>\n</tr>\n<tr>\n<td>xiii.</td>\n<td>Transaction Fee<br/>Please note that the vendors will have the access to online e-tender only after payment of transaction fees online.</td>\n<td>As charged by MSTC ltd. Payment of transaction fees will be paid online through MSTC payment gateway.</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "order": 1,
+      "label": "Placeholder-text",
+      "type": "Text",
+      "bbox_xyxy": [
+        1730.8,
+        1969.9,
+        2162.4,
+        2223.1
+      ],
+      "conf": 0.535,
+      "text": "Regional Director\nBhubaneswar"
+    },
+    {
+      "order": 2,
+      "label": "Folio",
+      "type": "PageNumber",
+      "bbox_xyxy": [
+        177.8,
+        2805.3,
+        1963.6,
+        2870.5
+      ],
+      "conf": 0.658,
+      "text": "Comprehensive Annual Maintenance Service Contract (CAMSC) for Pest Control Services in Bank's Main Office Premises (MOP) and Three (03) Residential Colonies of RBI Bhubaneswar, Odisha"
+    },
+    {
+      "order": 3,
+      "label": "Page-number",
+      "type": "PageNumber",
+      "bbox_xyxy": [
+        1909.0,
+        2767.6,
+        2134.0,
+        2841.2
+      ],
+      "conf": 0.587,
+      "text": "8 | Page\nha"
+    },
+    {
+      "order": 4,
+      "label": "Footer",
+      "type": "PageFooter",
+      "bbox_xyxy": [
+        134.8,
+        2735.0,
+        2177.0,
+        2905.5
+      ],
+      "conf": 0.708,
+      "text": ""
+    }
+  ]
+}

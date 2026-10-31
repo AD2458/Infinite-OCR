@@ -1,0 +1,118 @@
+{
+  "id": "indic-ocr-d9eb1862af564b34b6a4661fbe2f6b3f",
+  "created": 1793308551,
+  "model": "indic-ocr",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "3. Important instructions for E-procurement\n\nBidders are requested to read the terms & conditions of this tender before submitting their\nonline tender.\n\n1. A) Registration: The process involves vendor's registration with MSTC e-procurement\nportal which is free of cost. Only after registration, the vendor(s) can submit his/their bids\nelectronically. Electronic Bidding for submission of Techno commercial Bid as well as\nCommercial Bid will be done over the internet. The Vendor should possess Class III\nsigning type digital certificate. Vendors are to make their own arrangement for bidding\nfrom a P.C. connected with Internet. MSTC is not responsible for making such\narrangement. (Bids will not be recorded without Digital Signature).\n\nSPECIAL NOTE: THE TECHNICAL BID AND THE COMMERCIAL BID HAS TO BE\nSUBMITTED ON-LINE AT www.mstcecommerce.com/eprocn\n1). Vendors are required to register themselves online with www.mstcecommerce.com$\\rightarrow$\ne-Procurement $\\rightarrow$PSU/Govt depts.$\\rightarrow$ Select RBI Logo->Register as Vendor -- Filling up\ndetails and creating own user id and password$\\rightarrow$\nSubmit.\n2). Vendors will receive a system generated mail confirming their registration in their\nemail which has been provided during filling the registration form.\nIn case of any clarification, please contact RBI/MSTC, (before the scheduled time of the\ne- tender).\nContact person (RBI):\n\n<table>\n<thead>\n<tr>\n<th>Contact Person &<br/>Designation</th>\n<th>Email ID</th>\n<th>Mobile No.</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Shri Manoj Pati, Manager</td>\n<td>manojpati@rbi.org.in</td>\n<td>9437492745</td>\n</tr>\n<tr>\n<td>Shri Rajesh Bonagiri, AM</td>\n<td>rajeshbonagiri@rbi.org.in</td>\n<td>9160541941</td>\n</tr>\n<tr>\n<td>Shri Rajesh Satapathy, PS<br/>(Gr A)</td>\n<td>rajeshsatapathy@rbi.org.in</td>\n<td>7684074612</td>\n</tr>\n</tbody>\n</table>\n\nContact person (MSTC Ltd):\n\n<table>\n<thead>\n<tr>\n<th>Contact Person</th>\n<th>Mail</th>\n<th>Mobile</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Shri Mahesh Ramavath</td>\n<td>rmahesh@mstcindia.co.in</td>\n<td>8801281004</td>\n</tr>\n<tr>\n<td>Shri TDMV Satyasai</td>\n<td>tsatyasai@mstcindia.co.in</td>\n<td>6370350776</td>\n</tr>\n<tr>\n<td>Help Desk /Office</td>\n<td>helpdesk@mstcindia.co.in</td>\n<td>0674-2544199/2950091</td>\n</tr>\n</tbody>\n</table>\n\nComprehensive Annual Maintenance Service Contract (CAMSC) for Pest Control Services in Bank's Main Office Premises (MOP) and Three (03) Residential Colonies of RBI Bhubaneswar, Odisha\n\n9 | Page",
+        "role": "assistant",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 687,
+    "prompt_tokens": 3012,
+    "total_tokens": 3699
+  },
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Header",
+      "type": "PageHeader",
+      "bbox_xyxy": [
+        635.1,
+        186.4,
+        1746.9,
+        334.2
+      ],
+      "conf": 0.533,
+      "text": ""
+    },
+    {
+      "order": 1,
+      "label": "Section-title",
+      "type": "SectionHeader",
+      "bbox_xyxy": [
+        697.1,
+        254.3,
+        1684.8,
+        317.8
+      ],
+      "conf": 0.825,
+      "text": "3. Important instructions for E-procurement"
+    },
+    {
+      "order": 2,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        185.2,
+        362.0,
+        1983.7,
+        476.0
+      ],
+      "conf": 0.908,
+      "text": "Bidders are requested to read the terms & conditions of this tender before submitting their\nonline tender."
+    },
+    {
+      "order": 3,
+      "label": "List",
+      "type": "Text",
+      "bbox_xyxy": [
+        181.7,
+        481.4,
+        2109.7,
+        2653.3
+      ],
+      "conf": 0.556,
+      "text": "1. A) Registration: The process involves vendor's registration with MSTC e-procurement\nportal which is free of cost. Only after registration, the vendor(s) can submit his/their bids\nelectronically. Electronic Bidding for submission of Techno commercial Bid as well as\nCommercial Bid will be done over the internet. The Vendor should possess Class III\nsigning type digital certificate. Vendors are to make their own arrangement for bidding\nfrom a P.C. connected with Internet. MSTC is not responsible for making such\narrangement. (Bids will not be recorded without Digital Signature).\n\nSPECIAL NOTE: THE TECHNICAL BID AND THE COMMERCIAL BID HAS TO BE\nSUBMITTED ON-LINE AT www.mstcecommerce.com/eprocn\n1). Vendors are required to register themselves online with www.mstcecommerce.com$\\rightarrow$\ne-Procurement $\\rightarrow$PSU/Govt depts.$\\rightarrow$ Select RBI Logo->Register as Vendor -- Filling up\ndetails and creating own user id and password$\\rightarrow$\nSubmit.\n2). Vendors will receive a system generated mail confirming their registration in their\nemail which has been provided during filling the registration form.\nIn case of any clarification, please contact RBI/MSTC, (before the scheduled time of the\ne- tender).\nContact person (RBI):\n\n<table>\n<thead>\n<tr>\n<th>Contact Person &<br/>Designation</th>\n<th>Email ID</th>\n<th>Mobile No.</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Shri Manoj Pati, Manager</td>\n<td>manojpati@rbi.org.in</td>\n<td>9437492745</td>\n</tr>\n<tr>\n<td>Shri Rajesh Bonagiri, AM</td>\n<td>rajeshbonagiri@rbi.org.in</td>\n<td>9160541941</td>\n</tr>\n<tr>\n<td>Shri Rajesh Satapathy, PS<br/>(Gr A)</td>\n<td>rajeshsatapathy@rbi.org.in</td>\n<td>7684074612</td>\n</tr>\n</tbody>\n</table>\n\nContact person (MSTC Ltd):\n\n<table>\n<thead>\n<tr>\n<th>Contact Person</th>\n<th>Mail</th>\n<th>Mobile</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Shri Mahesh Ramavath</td>\n<td>rmahesh@mstcindia.co.in</td>\n<td>8801281004</td>\n</tr>\n<tr>\n<td>Shri TDMV Satyasai</td>\n<td>tsatyasai@mstcindia.co.in</td>\n<td>6370350776</td>\n</tr>\n<tr>\n<td>Help Desk /Office</td>\n<td>helpdesk@mstcindia.co.in</td>\n<td>0674-2544199/2950091</td>\n</tr>\n</tbody>\n</table>"
+    },
+    {
+      "order": 4,
+      "label": "Folio",
+      "type": "PageNumber",
+      "bbox_xyxy": [
+        179.9,
+        2817.3,
+        1957.1,
+        2860.7
+      ],
+      "conf": 0.67,
+      "text": "Comprehensive Annual Maintenance Service Contract (CAMSC) for Pest Control Services in Bank's Main Office Premises (MOP) and Three (03) Residential Colonies of RBI Bhubaneswar, Odisha"
+    },
+    {
+      "order": 5,
+      "label": "Page-number",
+      "type": "PageNumber",
+      "bbox_xyxy": [
+        1912.0,
+        2774.2,
+        2132.6,
+        2837.6
+      ],
+      "conf": 0.636,
+      "text": "9 | Page"
+    },
+    {
+      "order": 6,
+      "label": "Footer",
+      "type": "PageFooter",
+      "bbox_xyxy": [
+        138.5,
+        2755.6,
+        2168.2,
+        2893.6
+      ],
+      "conf": 0.74,
+      "text": ""
+    }
+  ]
+}

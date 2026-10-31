@@ -1,0 +1,105 @@
+{
+  "id": "indic-ocr-53e217a52feb43e88c43da7644366ab6",
+  "created": 1793308551,
+  "model": "indic-ocr",
+  "object": "chat.completion",
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "2. Schedule of Tender (SOT)\n\n<table>\n  <tbody>\n    <tr>\n      <td>i.</td>\n      <td>Date of intimation on the Website,<br/>and MSTC portal</td>\n      <td>December 30, 2025 after 18:00 Hrs.</td>\n    </tr>\n    <tr>\n      <td>ii.</td>\n      <td>e -Tender no.</td>\n      <td>RBI/Bhubaneswar Regional Office/Estate/40/25-<br/>26/ET/768</td>\n    </tr>\n    <tr>\n      <td>iii.</td>\n      <td>Mode of Tender</td>\n      <td>e-Procurement System<br/>(Online Part I - Techno-Commercial Bid and<br/>Part II - Price Bid through<br/>www.mstcecommerce.com/eprocn)</td>\n    </tr>\n    <tr>\n      <td>iv.</td>\n      <td>Estimated Cost</td>\n      <td>₹19,00,000/- (including GST)</td>\n    </tr>\n    <tr>\n      <td>v.</td>\n      <td>Date of NIT (along with complete<br/>tender) available to parties to<br/>download- Tender activation on<br/>portal-Tender ‘Live’ for all</td>\n      <td>December 30, 2025, 18:00 Hrs. onwards</td>\n    </tr>\n    <tr>\n      <td>vi.</td>\n      <td>Pre-bid meeting (Off-Line Mode)<br/>(All queries/ clarification, if any,<br/>must be discussed in the pre-bid<br/>meeting only)</td>\n      <td>January 20, 2026 at 11:00 Hrs.<br/>(Venue: Reserve Bank of India, Estate Department,<br/>II Floor, RBI, Bhubaneswar-751001).<br/>Note: The participants are advised to confirm their<br/>participation through mail ids mentioned, one day<br/>before to make the necessary arrangements.</td>\n    </tr>\n    <tr>\n      <td>vii.</td>\n      <td>Earnest Money Deposit</td>\n      <td>₹38,000/- (Rupees Thirty Eight Thousand only) i.e.<br/>2% of estimated cost<br/>i. NEFT/RTGS:<br/>A/C No-186003001, Reserve Bank of India,<br/>IFSC Code – RBIS0BBPA01 (5th and 10th<br/>character is ‘zero’),<br/>Branch Name – Bhubaneswar.<br/>The details of transaction may be provided to<br/>estatebhubaneswar@rbi.org.in<br/>(Or)<br/>i. Demand Draft/Bank Guarantee:<br/>DD/BG in favour of Reserve Bank of India,<br/>Bhubaneswar to be delivered in physical form at<br/>Reserve Bank of India, Pt. J. N. Marg, Bhubaneswar-<br/>751001. EMD in any of the above forms shall be<br/>deposited in original at the office of tender inviting<br/>authority on or before the due date The validity of the<br/>BG should be up to the validity of the bid. However,<br/>in case of extension of the Bid, the BG also needs to</td>\n    </tr>\n  </tbody>\n</table>\n\nComprehensive Annual Maintenance Service Contract (CAMSC) for Pest Control Services in Bank's Main Office Premises (MOP) and Three (03) Residential Colonies of RBI Bhubaneswar, Odisha\n\n7 | Page",
+        "role": "assistant",
+        "provider_specific_fields": {
+          "refusal": null
+        }
+      },
+      "provider_specific_fields": {}
+    }
+  ],
+  "usage": {
+    "completion_tokens": 763,
+    "prompt_tokens": 2677,
+    "total_tokens": 3440
+  },
+  "blocks": [
+    {
+      "order": 0,
+      "label": "Header",
+      "type": "PageHeader",
+      "bbox_xyxy": [
+        798.1,
+        195.7,
+        1558.8,
+        309.7
+      ],
+      "conf": 0.542,
+      "text": ""
+    },
+    {
+      "order": 1,
+      "label": "Table-caption",
+      "type": "Caption",
+      "bbox_xyxy": [
+        842.5,
+        242.4,
+        1533.1,
+        304.9
+      ],
+      "conf": 0.706,
+      "text": "2. Schedule of Tender (SOT)"
+    },
+    {
+      "order": 2,
+      "label": "Table",
+      "type": "Table",
+      "bbox_xyxy": [
+        185.2,
+        299.2,
+        2209.1,
+        2732.0
+      ],
+      "conf": 0.968,
+      "text": "<table>\n  <tbody>\n    <tr>\n      <td>i.</td>\n      <td>Date of intimation on the Website,<br/>and MSTC portal</td>\n      <td>December 30, 2025 after 18:00 Hrs.</td>\n    </tr>\n    <tr>\n      <td>ii.</td>\n      <td>e -Tender no.</td>\n      <td>RBI/Bhubaneswar Regional Office/Estate/40/25-<br/>26/ET/768</td>\n    </tr>\n    <tr>\n      <td>iii.</td>\n      <td>Mode of Tender</td>\n      <td>e-Procurement System<br/>(Online Part I - Techno-Commercial Bid and<br/>Part II - Price Bid through<br/>www.mstcecommerce.com/eprocn)</td>\n    </tr>\n    <tr>\n      <td>iv.</td>\n      <td>Estimated Cost</td>\n      <td>₹19,00,000/- (including GST)</td>\n    </tr>\n    <tr>\n      <td>v.</td>\n      <td>Date of NIT (along with complete<br/>tender) available to parties to<br/>download- Tender activation on<br/>portal-Tender ‘Live’ for all</td>\n      <td>December 30, 2025, 18:00 Hrs. onwards</td>\n    </tr>\n    <tr>\n      <td>vi.</td>\n      <td>Pre-bid meeting (Off-Line Mode)<br/>(All queries/ clarification, if any,<br/>must be discussed in the pre-bid<br/>meeting only)</td>\n      <td>January 20, 2026 at 11:00 Hrs.<br/>(Venue: Reserve Bank of India, Estate Department,<br/>II Floor, RBI, Bhubaneswar-751001).<br/>Note: The participants are advised to confirm their<br/>participation through mail ids mentioned, one day<br/>before to make the necessary arrangements.</td>\n    </tr>\n    <tr>\n      <td>vii.</td>\n      <td>Earnest Money Deposit</td>\n      <td>₹38,000/- (Rupees Thirty Eight Thousand only) i.e.<br/>2% of estimated cost<br/>i. NEFT/RTGS:<br/>A/C No-186003001, Reserve Bank of India,<br/>IFSC Code – RBIS0BBPA01 (5th and 10th<br/>character is ‘zero’),<br/>Branch Name – Bhubaneswar.<br/>The details of transaction may be provided to<br/>estatebhubaneswar@rbi.org.in<br/>(Or)<br/>i. Demand Draft/Bank Guarantee:<br/>DD/BG in favour of Reserve Bank of India,<br/>Bhubaneswar to be delivered in physical form at<br/>Reserve Bank of India, Pt. J. N. Marg, Bhubaneswar-<br/>751001. EMD in any of the above forms shall be<br/>deposited in original at the office of tender inviting<br/>authority on or before the due date The validity of the<br/>BG should be up to the validity of the bid. However,<br/>in case of extension of the Bid, the BG also needs to</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "order": 3,
+      "label": "Folio",
+      "type": "PageNumber",
+      "bbox_xyxy": [
+        179.4,
+        2820.9,
+        1938.8,
+        2855.9
+      ],
+      "conf": 0.618,
+      "text": "Comprehensive Annual Maintenance Service Contract (CAMSC) for Pest Control Services in Bank's Main Office Premises (MOP) and Three (03) Residential Colonies of RBI Bhubaneswar, Odisha"
+    },
+    {
+      "order": 4,
+      "label": "Paragraph",
+      "type": "Text",
+      "bbox_xyxy": [
+        1921.5,
+        2779.3,
+        2120.1,
+        2831.3
+      ],
+      "conf": 0.575,
+      "text": "7 | Page"
+    },
+    {
+      "order": 5,
+      "label": "Footer",
+      "type": "PageFooter",
+      "bbox_xyxy": [
+        166.7,
+        2772.7,
+        2146.0,
+        2872.6
+      ],
+      "conf": 0.699,
+      "text": ""
+    }
+  ]
+}

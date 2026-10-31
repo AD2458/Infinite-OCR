@@ -1,0 +1,28 @@
+# --- secrets: must stay first, never commit an API key ---
+.env
+.env.*
+!.env.example
+*.key
+
+# --- generated artifacts / cached pages (can be large, and are reproducible) ---
+store/
+out/
+*.sqlite
+*.db
+serve.*.log
+
+# --- python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.pytest_tmp/
+.mypy_cache/
+.ruff_cache/
+
+# --- os / editor ---
+Thumbs.db
+.DS_Store
+.vscode/
